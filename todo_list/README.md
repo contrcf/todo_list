@@ -40,9 +40,10 @@ poetry run python -m to_do_list list
 
 Crear una nueva lista
 ```
-(opcion 1) poetry run python -m to_do_list list -ln mi-lista
+ 
+(opcion 1) poetry run python -m to_do_list create -ln mi-lista
 
-(opcion 2) poetry run python -m to_do_list list --listname mi-lista
+(opcion 2) poetry run python -m to_do_list create --listname mi-lista
 ```
 
 Mostrar la lista
@@ -55,7 +56,7 @@ Mostrar la lista
 
 Agregar una tarea
 ```
-(opcion 1) poetry run python -m to_do_list add -ln mi_lista_jevb -tn "Hacer ejercicio" -d "correr en el parque" -o "Jose"
+(opcion 1) poetry run python -m to_do_list add -ln mi_lista_jevb -tn "Hacer ejercicio" -d "correr en el parque" -o "Contreras"
 
 (opcion 2) poetry run python -m to_do_list add --listname mi_lista_jevb --taskame "Hacer ejercicio" --description "correr en el parque" --owner "Jose"
 ```

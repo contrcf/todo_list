@@ -2,7 +2,7 @@
 name = "todo-list"
 version = "0.1.0"
 description = ""
-authors = ["contrcf <contrf@cat.comqa:>"]
+authors = ["contrcf <contrf@cat.com"]
 readme = "README.md"
 packages = [{include = "todo_list"}]
 

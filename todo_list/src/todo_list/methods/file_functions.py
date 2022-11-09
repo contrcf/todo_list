@@ -1,5 +1,5 @@
 import os
-from todo_list.config import settings,ROOT_DIR
+from todo_list.src.todo_list.config import settings,ROOT_DIR
 from pathlib import Path
 import pandas as pd
 

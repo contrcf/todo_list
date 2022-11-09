@@ -1,1 +1,0 @@
-from todo_list.methods.todo_commands import app

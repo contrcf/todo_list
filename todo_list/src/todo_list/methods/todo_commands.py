@@ -14,7 +14,21 @@ app = typer.Typer(add_completion=False)
 @app.command("create")
 def create(name: str = typer.Option("Unnamed", "-ln", "--listname")):
 
-    """Create a new todo list"""
+    """Create a new todo list
+
+    Parameters
+    ----------
+    name: str :
+         (Default value = typer.Option("Unnamed")
+    "-ln" :
+        
+    "--listname") :
+        
+
+    Returns
+    -------
+
+    """
 
     if check_list_exists(name):
         print("There is already a todo list with this name.")
@@ -26,7 +40,21 @@ def create(name: str = typer.Option("Unnamed", "-ln", "--listname")):
 
 @app.command("show")
 def show_list(list_name: str = typer.Option(..., "-ln", "--listname")):
-    """Shows Task in one list"""
+    """Shows Task in one list
+
+    Parameters
+    ----------
+    list_name: str :
+         (Default value = typer.Option(...)
+    "-ln" :
+        
+    "--listname") :
+        
+
+    Returns
+    -------
+
+    """
     if not check_list_exists(list_name):
         print("The list does not exist. Use create list first.")
         return
@@ -41,7 +69,39 @@ def add_task(
     summary: str = typer.Option(None, "-d", "--description"),
     owner: str = typer.Option(..., "-o", "--owner"),
 ):
-    """Add a task to a given todo list"""
+    """Add a task to a given todo list
+
+    Parameters
+    ----------
+    list_name: str :
+         (Default value = typer.Option(...)
+    "-ln" :
+        
+    "--listname") :
+        
+    task_name: str :
+         (Default value = typer.Option(...)
+    "-tn" :
+        
+    "--taskame") :
+        
+    summary: str :
+         (Default value = typer.Option(None)
+    "-d" :
+        
+    "--description") :
+        
+    owner: str :
+         (Default value = typer.Option(...)
+    "-o" :
+        
+    "--owner") :
+        
+
+    Returns
+    -------
+
+    """
 
     if not check_list_exists(list_name):
         print("The list does not exist. Use create list first.")
@@ -67,7 +127,39 @@ def update_task(
     change: str = typer.Option(..., "-c", "--change"),
 ):
 
-    """Update a task in a given todo list"""
+    """Update a task in a given todo list
+
+    Parameters
+    ----------
+    list_name: str :
+         (Default value = typer.Option(...)
+    "-ln" :
+        
+    "--listname") :
+        
+    task_id: int :
+         (Default value = typer.Option(...)
+    "-i" :
+        
+    "--taskid") :
+        
+    field: str :
+         (Default value = typer.Option(...)
+    "-f" :
+        
+    "--field") :
+        
+    change: str :
+         (Default value = typer.Option(...)
+    "-c" :
+        
+    "--change") :
+        
+
+    Returns
+    -------
+
+    """
     if not check_list_exists(list_name):
         print("The list does not exist. Use create list first.")
         return

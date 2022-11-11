@@ -33,6 +33,20 @@ Revisando comandos posibles a ejecutar
 poetry run python -m to_do_list --help
 ```
 
+Agregar una tarea
+```
+(opcion 1) poetry run python -m to_do_list add -ln mi_lista_jevb -tn "Hacer ejercicio" -d "correr en el parque" -o "Contreras"
+
+(opcion 2) poetry run python -m to_do_list add --listname mi_lista_jevb --taskame "Hacer ejercicio" --description "correr en el parque" --owner "Jose"
+```
+
+Actualizar un campo
+```
+(opcion 1) poetry run python -m to_do_list update -ln mi_lista_jevb -i 0 -f status -c done
+
+(opcion 2) poetry run python -m to_do_list update --listname --taskid 0 --field status --change done
+```
+
 Listar los archivos
 ```
 poetry run python -m to_do_list list
@@ -52,23 +66,6 @@ Mostrar la lista
 
 (opcion 2) poetry run python -m to_do_list show --listname mi-lista
 ```
-
-
-Agregar una tarea
-```
-(opcion 1) poetry run python -m to_do_list add -ln mi_lista_jevb -tn "Hacer ejercicio" -d "correr en el parque" -o "Contreras"
-
-(opcion 2) poetry run python -m to_do_list add --listname mi_lista_jevb --taskame "Hacer ejercicio" --description "correr en el parque" --owner "Jose"
-```
-
-Actualizar un campo
-```
-(opcion 1) poetry run python -m to_do_list update -ln mi_lista_jevb -i 0 -f status -c done
-
-(opcion 2) poetry run python -m to_do_list update --listname --taskid 0 --field status --change done
-```
-
-
 
 ## Ejecutar pruebas unitarias y de integracion
 * Pruebas unitarias

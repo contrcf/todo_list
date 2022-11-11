@@ -74,8 +74,9 @@ def test_get_filename():
     """ """
     assert file_functions.get_list_filename("data") == "data.csv"
 
+    return pd.DataFrame(
+        columns=["created", "task", "summary", "status", "owner"])
 
-def test_check_list_exists_fail(tmp_dir):
     """
 
     Parameters
@@ -87,16 +88,12 @@ def test_check_list_exists_fail(tmp_dir):
     -------
 
     """
-    assert file_functions.check_list_exists("todos") == False
-
 
 def test_load_list(df_empty_stored, tmp_dir):
     """
 
     Parameters
     ----------
-    df_empty_stored :
-        
     tmp_dir :
         
 

@@ -10,23 +10,6 @@ import pytest
 import shutil
 
 
-@pytest.fixture(scope="function")
-def df_full_stored(tmp_dir, df_full):
-    """
-
-    Parameters
-    ----------
-    tmp_dir :
-        
-    df_full :
-        
-
-    Returns
-    -------
-
-    """
-    df_full.to_csv(f"{tmp_dir}/todos.csv",index=False)
-    return df_full
 
 
 @pytest.fixture(scope="session")
@@ -40,9 +23,8 @@ def new_row():
         "owner": "CCF",
     }
 
-
 @pytest.fixture(scope="session")
-def df_full(new_row):
+def full_df(new_row):
     """
 
     Parameters
@@ -59,7 +41,7 @@ def df_full(new_row):
     )
 
 
-def create_list(tmp_dir, df_empty):
+def list_create(tmp_dir, df_empty):
     """
 
     Parameters
@@ -78,7 +60,7 @@ def create_list(tmp_dir, df_empty):
     pd.testing.assert_frame_equal(df1, df_empty)
 
 
-def test_store_list(tmp_dir, df_empty):
+def store_list(tmp_dir, df_empty):
     """
 
     Parameters
@@ -97,7 +79,7 @@ def test_store_list(tmp_dir, df_empty):
     pd.testing.assert_frame_equal(df_empty, df2)
 
 
-def add_to_list(new_row, df_full, tmp_dir,df_empty_stored):
+def add_tolist(new_row, df_full, tmp_dir,df_empty_stored):
     """
 
     Parameters
@@ -120,7 +102,7 @@ def add_to_list(new_row, df_full, tmp_dir,df_empty_stored):
     pd.testing.assert_frame_equal(df1, df_full)
 
 
-def update_list(df_full_stored):
+def list_update(df_full_stored):
     """
 
     Parameters
@@ -137,7 +119,7 @@ def update_list(df_full_stored):
     df = file_functions.load_list("todos")
     pd.testing.assert_frame_equal(df, df_full_stored)
 
-def create_multiple_list(tmp_dir, df_empty):
+def multiple_list_create(tmp_dir, df_empty):
     """
 
     Parameters
@@ -155,7 +137,7 @@ def create_multiple_list(tmp_dir, df_empty):
         file_functions.create_list(f"todos_{i}")
     assert len(file_functions.get_existing_lists()) == 5
 
-def update_list_add_column(df_full_stored):
+def update_listadd_column(df_full_stored):
     """
 
     Parameters

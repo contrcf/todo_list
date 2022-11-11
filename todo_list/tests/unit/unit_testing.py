@@ -1,11 +1,12 @@
 from src.todo_list.methods import file_functions
+
 import pandas as pd
 import pytest
 import shutil
 
 
 @pytest.fixture(scope="function")
-def tmp_dir(tmpdir_factory):
+def mk_tmp_dir(tmpdir_factory):
     """
 
     Parameters
@@ -25,7 +26,21 @@ def tmp_dir(tmpdir_factory):
 
 @pytest.fixture(scope="session")
 def df_empty():
-    """ """
+    """
+
+    Parameters
+    ----------
+    tmp_dir :
+        
+    df_empty :
+        
+
+    Returns
+    -------
+
+    """
+    
+        
     return pd.DataFrame(
         columns=["created", "task", "summary", "status", "owner"])
 
@@ -49,7 +64,7 @@ def df_empty_stored(tmp_dir, df_empty):
     return df_empty
 
 
-def test_check_list_exists(df_empty_stored):
+def check_list_exists(df_empty_stored):
     """
 
     Parameters
@@ -64,14 +79,26 @@ def test_check_list_exists(df_empty_stored):
     assert file_functions.check_list_exists("todos") == True
 
 
-def test_get_list_path():
+def get_list_path():
     """ """
     assert file_functions.get_list_path("todos") == \
         file_functions.PATH_TO_DATA + "/" + "todos.csv"
 
 
-def test_get_filename():
-    """ """
+def get_filename():
+    """
+
+    Parameters
+    ----------
+    tmp_dir :
+        
+    df_empty :
+        
+
+    Returns
+    -------
+
+    """
     assert file_functions.get_list_filename("data") == "data.csv"
 
     return pd.DataFrame(
@@ -79,7 +106,7 @@ def test_get_filename():
 
 
 
-def test_load_list(df_empty_stored, tmp_dir):
+def load_list(df_empty_stored, tmp_dir):
     """
 
     Parameters
@@ -95,7 +122,7 @@ def test_load_list(df_empty_stored, tmp_dir):
     pd.testing.assert_frame_equal(df_empty_stored, df)
 
 
-def test_check_number_of_files(df_empty_stored):
+def check_number_of_files(df_empty_stored):
     """
 
     Parameters

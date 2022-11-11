@@ -67,7 +67,8 @@ Mostrar la lista
 (opcion 2) poetry run python -m to_do_list show --listname mi-lista
 ```
 
-## Ejecutar pruebas unitarias y de integracion
+## Ejecucion de pruebas unitarias y de integracion
+
 * Pruebas unitarias
 ```
 pytest tests/unit/ -v

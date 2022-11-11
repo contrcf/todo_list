@@ -77,17 +77,7 @@ def test_get_filename():
     return pd.DataFrame(
         columns=["created", "task", "summary", "status", "owner"])
 
-    """
 
-    Parameters
-    ----------
-    tmp_dir :
-        
-
-    Returns
-    -------
-
-    """
 
 def test_load_list(df_empty_stored, tmp_dir):
     """
